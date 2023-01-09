@@ -1,21 +1,20 @@
 package ru.netology.service;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Test;
 
-import static org.testng.Assert.*;
+import static org.junit.Assert.*;
 
 public class CashbackHackServiceTest {
 
     @Test
-    public void ShouldReturn999IfAmountsIs1001() {
+    public void ShouldReturn999IfAmounstIs1001() {
         CashbackHackService service = new CashbackHackService();
         int amount = 1001;
 
-        int actual = service.remain(amount);
         int expected = 999;
+        int actual = service.remain(amount);
 
-        Assert.assertEquals(actual, expected);
+        assertEquals(expected,actual);
     }
 
     @Test
@@ -23,10 +22,10 @@ public class CashbackHackServiceTest {
         CashbackHackService service = new CashbackHackService();
         int amount = 1002;
 
-        int actual = service.remain(amount);
         int expected = 998;
+        int actual = service.remain(amount);
 
-        Assert.assertEquals(actual, expected);
+        assertEquals(expected,actual);
     }
 
     @Test
@@ -34,10 +33,10 @@ public class CashbackHackServiceTest {
         CashbackHackService service = new CashbackHackService();
         int amount = 999;
 
-        int actual = service.remain(amount);
         int expected = 1;
+        int actual = service.remain(amount);
 
-        Assert.assertEquals(actual, expected);
+        assertEquals(expected,actual);
     }
 
     @Test
@@ -45,55 +44,55 @@ public class CashbackHackServiceTest {
         CashbackHackService service = new CashbackHackService();
         int amount = 998;
 
-        int actual = service.remain(amount);
         int expected = 2;
+        int actual = service.remain(amount);
 
-        Assert.assertEquals(actual, expected);
+        assertEquals(expected,actual);
     }
 
     @Test
-    public void ShouldReturn100fAmountsIs900() {
+    public void ShouldReturn100IfAmountsIs900() {
         CashbackHackService service = new CashbackHackService();
         int amount = 900;
 
-        int actual = service.remain(amount);
         int expected = 100;
-
-        Assert.assertEquals(actual, expected);
-    }
-
-    @Test
-    //тест падает, сервис выдает неверный результат
-    public void ShouldReturn0fAmountsIs1000() {
-        CashbackHackService service = new CashbackHackService();
-        int amount = 1000;
-
         int actual = service.remain(amount);
-        int expected = 0;
 
-        Assert.assertEquals(actual, expected);
+        assertEquals(expected,actual);
     }
 
     @Test
-    public void ShouldReturn1000fAmountsIs0() {
+    public void ShouldReturn1000IfAmountsIs0() {
         CashbackHackService service = new CashbackHackService();
         int amount = 0;
 
-        int actual = service.remain(amount);
         int expected = 1000;
+        int actual = service.remain(amount);
 
-        Assert.assertEquals(actual, expected);
+        assertEquals(expected,actual);
     }
 
     @Test
-    //тест падает, сервис выдает неверный результат
-    public void ShouldReturn0fAmountsIs2000() {
+    // тест падает, сервис выдает неверный результат
+    public void ShouldReturn0IfAmountsIs1000() {
+        CashbackHackService service = new CashbackHackService();
+        int amount = 1000;
+
+        int expected = 0;
+        int actual = service.remain(amount);
+
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    // тест падает, сервис выдает неверный результат
+    public void ShouldReturn0IfAmountsIs2000() {
         CashbackHackService service = new CashbackHackService();
         int amount = 2000;
 
-        int actual = service.remain(amount);
         int expected = 0;
+        int actual = service.remain(amount);
 
-        Assert.assertEquals(actual, expected);
+        assertEquals(expected,actual);
     }
 }
